@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ============================================================
+       META & SEO — CORE
+       Update: description, keywords, author as needed
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- PRIMARY SEO -->
+  <title>Gourav Chawla | GCP Data Engineer | BigQuery · Airflow · dbt · PySpark</title>
+  <meta name="description"
+    content="Gourav Chawla — Senior Data Engineer with 4+ years experience on GCP. Specialising in BigQuery, Airflow, dbt, PySpark, Dataproc and Medallion Architecture. Based in Gurugram, India." />
+  <meta name="keywords"
+    content="Gourav Chawla, GCP Data Engineer, Google Cloud Data Engineer, BigQuery, Airflow, dbt, PySpark, Dataproc, Medallion Architecture, Data Pipeline, ETL, Terraform, Python, SQL, Accenture, TCS, India" />
+  <meta name="author" content="Gourav Chawla" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- ============================================================
+       CANONICAL URL
+       IMPORTANT: Replace with your actual deployed URL
+  ============================================================ -->
+  <link rel="canonical" href="https://gouravchawla.netlify.app/" />
+
+  <!-- ============================================================
+       OPEN GRAPH — Facebook / LinkedIn Preview
+       IMPORTANT: Replace og:url and og:image with your real values
+       og:image recommended size: 1200x630px
+  ============================================================ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gouravchawla.netlify.app/" />
+  <meta property="og:title" content="Gourav Chawla | GCP Data Engineer" />
+  <meta property="og:description"
+    content="4+ years building scalable data pipelines on GCP. BigQuery · Airflow · dbt · PySpark · Terraform." />
+  <!-- ADD YOUR OG IMAGE: recommended 1200x630px, upload to /assets/og-image.png -->
+  <meta property="og:image" content="https://gouravchawla.netlify.app/assets/og-image.png" />
+  <meta property="og:site_name" content="Gourav Chawla Portfolio" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- ============================================================
+       TWITTER CARD
+  ============================================================ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gourav Chawla | GCP Data Engineer" />
+  <meta name="twitter:description"
+    content="4+ years building scalable data pipelines on GCP. BigQuery · Airflow · dbt · PySpark · Terraform." />
+  <!-- ADD YOUR TWITTER IMAGE (same as og:image works fine) -->
+  <meta name="twitter:image" content="https://gouravchawla.netlify.app/assets/og-image.png" />
+
+  <!-- ============================================================
+       FAVICON
+       IMPORTANT: Add your favicon files to /assets/
+       Generate at: https://favicon.io
+       Recommended: upload a square logo/photo → download the zip
+  ============================================================ -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/site.webmanifest" />
+
+  <!-- ============================================================
+       SCHEMA.ORG — JSON-LD STRUCTURED DATA
+       This is what makes Google show rich results with your name.
+       Update sameAs URLs with your real profiles.
+  ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Gourav Chawla",
+    "url": "https://gouravchawla.netlify.app/",
+    "image": "https://gouravchawla.netlify.app/assets/profile.jpg",
+    "jobTitle": "Data Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Accenture"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "State Institute of Engineering and Technology, Nilokheri"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gurugram",
+      "addressRegion": "Haryana",
+      "addressCountry": "IN"
+    },
+    "email": "gouravchawla334@gmail.com",
+    "telephone": "+919034838820",
+    "sameAs": [
+      "https://linkedin.com/in/gourav-chawla",
+      "https://github.com/gouravchawla334",
+      "https://dev.to/gouravchawla_334"
+    ],
+    "knowsAbout": [
+      "Google Cloud Platform", "BigQuery", "Apache Airflow",
+      "dbt", "PySpark", "Terraform", "Data Engineering",
+      "ETL Pipelines", "Medallion Architecture"
+    ]
+  }
+  </script>
+
+  <!-- ============================================================
+       EXTERNAL CSS — Bootstrap 5 + Font Awesome + Google Fonts
+  ============================================================ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Fonts: JetBrains Mono (headings/code feel) + Nunito (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Nunito:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav" aria-label="Main navigation">
+    <div class="container">
+	
+		<!-- Dark/Light theme toggle button -->
+		<button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
+		<i class="fa-solid fa-moon" id="themeIcon"></i>
+		</button>
+
+      <!-- LOGO / BRAND — update text or swap with <img> tag -->
+      <a class="navbar-brand" href="#home" aria-label="Gourav Chawla Home">
+        <span class="brand-bracket">&lt;</span>
+        GC
+        <span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <!-- Mobile hamburger toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-icon"></span>
+        <span class="toggler-icon"></span>
+        <span class="toggler-icon"></span>
+      </button>
+
+      <!-- Nav links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+		  
+		  <!--topmate -->
+		  
+		  <li class="nav-item">
+			<a class="nav-link" href="https://topmate.io/gourav_chawla" target="_blank"
+				rel="noopener noreferrer" aria-label="Topmate Mentoring">
+				<i class="fa-solid fa-chalkboard-user me-1"></i>Mentor
+			</a>
+		</li>
+		  
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-outline-accent" href="https://gouravchawla334.github.io/MYRESUME/" download
+              aria-label="Download Resume">
+              <i class="fa-solid fa-download me-1"></i> Resume
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END NAVBAR -->
+
+
+  <!-- ============================================================
+       HERO SECTION
+       particles-js div is the animated background container
+       Typed.js cycles through  roles automatically (configured in main.js)
+  ============================================================ -->
+  <section id="home" class="hero-section" aria-label="Hero section">
+    <!-- Particles.js container  -->
+    <div id="particles-js" aria-hidden="true"></div>
+
+    <div class="container hero-content">
+      <div class="row align-items-center min-vh-100">
+        <div class="col-lg-8">
+
+          <!-- Greeting tag -->
+          <p class="hero-greeting">
+            <span class="code-tag">&lt;</span>
+            Hello World
+            <span class="code-tag">/&gt;</span>
+          </p>
+
+          <!--H1 for SEO -->
+          <h1 class="hero-name">Gourav <span class="accent">Chawla</span></h1>
+
+          <!-- Typed.js animated roles — edit roles in js/main.js → typedStrings array -->
+          <p class="hero-role">
+            I'm a&nbsp;<span id="typed-role" aria-label="Data Engineer"></span>
+          </p>
+
+          <!-- Short tagline -->
+          <p class="hero-tagline">
+			Building scalable data pipelines on <span class="accent">GCP</span> ·
+			Processing <span class="accent">30GB+</span> daily ·
+			<span class="accent">AI-powered</span> engineering workflows
+		  </p>
+
+          <!-- CTA buttons -->
+          <div class="hero-cta d-flex flex-wrap gap-3 mt-4">
+            <a href="#experience" class="btn btn-accent">
+              <i class="fa-solid fa-briefcase me-2"></i>View My Work
+            </a>
+            <a href="#contact" class="btn btn-outline-accent">
+              <i class="fa-solid fa-envelope me-2"></i>Get In Touch
+            </a>
+          </div>
+
+          <!-- Social links -->
+          <div class="hero-socials mt-4" aria-label="Social media links">
+            <a href="https://linkedin.com/in/gourav-chawla" target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn" class="social-icon">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/gouravchawla334" target="_blank" rel="noopener noreferrer"
+              aria-label="GitHub" class="social-icon">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://dev.to/gouravchawla_334" target="_blank" rel="noopener noreferrer"
+              aria-label="Dev.to" class="social-icon">
+              <i class="fa-brands fa-dev"></i>
+            </a>
+            <a href="mailto:gouravchawla334@gmail.com" aria-label="Email" class="social-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+			
+			<!-- TOPMATE -->
+			<a href="https://topmate.io/gourav_chawla" target="_blank" rel="noopener noreferrer"
+				aria-label="Topmate - Book a Mentoring Session" class="social-icon">
+			<i class="fa-solid fa-chalkboard-user"></i>
+			</a>
+          </div>
+
+        </div>
+
+        <!-- Hero illustration — data pipeline SVG (inline, no external file needed) -->
+        <div class="col-lg-4 d-none d-lg-flex justify-content-center align-items-center">
+          <div class="hero-illustration" aria-hidden="true">
+            <!-- Animated pipeline diagram -->
+            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" class="pipeline-svg">
+              <!-- Outer ring -->
+              <circle cx="150" cy="150" r="120" fill="none" stroke="rgba(0,212,255,0.15)" stroke-width="1" />
+              <circle cx="150" cy="150" r="90" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="1" />
+              <!-- Center node -->
+              <circle cx="150" cy="150" r="30" fill="rgba(0,212,255,0.1)" stroke="#00d4ff" stroke-width="1.5" class="pulse-node" />
+              <text x="150" y="145" text-anchor="middle" fill="#00d4ff" font-size="9" font-family="JetBrains Mono">GCP</text>
+              <text x="150" y="158" text-anchor="middle" fill="#00d4ff" font-size="8" font-family="JetBrains Mono">Data</text>
+              <!-- Orbit nodes -->
+              <circle cx="150" cy="50" r="18" fill="rgba(0,212,255,0.08)" stroke="#00d4ff" stroke-width="1" class="orbit-node" />
+              <text x="150" y="54" text-anchor="middle" fill="#00d4ff" font-size="7" font-family="JetBrains Mono">BQ</text>
+              <circle cx="240" cy="150" r="18" fill="rgba(0,212,255,0.08)" stroke="#00d4ff" stroke-width="1" class="orbit-node" />
+              <text x="240" y="154" text-anchor="middle" fill="#00d4ff" font-size="7" font-family="JetBrains Mono">dbt</text>
+              <circle cx="150" cy="240" r="18" fill="rgba(0,212,255,0.08)" stroke="#00d4ff" stroke-width="1" class="orbit-node" />
+              <text x="150" y="244" text-anchor="middle" fill="#00d4ff" font-size="7" font-family="JetBrains Mono">DAG</text>
+              <circle cx="60" cy="150" r="18" fill="rgba(0,212,255,0.08)" stroke="#00d4ff" stroke-width="1" class="orbit-node" />
+              <text x="60" y="154" text-anchor="middle" fill="#00d4ff" font-size="7" font-family="JetBrains Mono">TF</text>
+              <!-- Connecting lines -->
+              <line x1="150" y1="120" x2="150" y2="68" stroke="rgba(0,212,255,0.4)" stroke-width="1" stroke-dasharray="4 3" />
+              <line x1="180" y1="150" x2="222" y2="150" stroke="rgba(0,212,255,0.4)" stroke-width="1" stroke-dasharray="4 3" />
+              <line x1="150" y1="180" x2="150" y2="222" stroke="rgba(0,212,255,0.4)" stroke-width="1" stroke-dasharray="4 3" />
+              <line x1="120" y1="150" x2="78" y2="150" stroke="rgba(0,212,255,0.4)" stroke-width="1" stroke-dasharray="4 3" />
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </section>
+  <!-- END HERO -->
+
+
+  <!-- ============================================================
+       ABOUT SECTION
+       To update stats: edit the .stat-number and .stat-label spans
+  ============================================================ -->
+  <section id="about" class="section-padding" aria-label="About me">
+    <div class="container">
+
+      <div class="section-header text-center mb-5">
+        <p class="section-tag">// about_me.py</p>
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+      </div>
+
+      <div class="row align-items-center g-5">
+
+        <!-- Profile photo column -->
+		<div class="col-lg-4 text-center">
+		<div class="profile-photo-wrapper">
+		
+			<img src="assets/profile.jpg" 
+				alt="Gourav Chawla - GCP Data Engineer"
+				class="profile-photo" 
+				width="280" 
+				height="280" 
+				loading="lazy" />
+		
+			<!-- Decorative ring -->
+			<div class="photo-ring" aria-hidden="true"></div>
+		
+		</div>
+		</div>
+
+        <!-- Bio column -->
+        <div class="col-lg-8">
+          <p class="about-bio">
+            I'm a <strong>Data Engineer at Accenture</strong> with 4+ years of experience designing
+            and building enterprise-scale data platforms on <strong>Google Cloud Platform</strong>.
+            I specialise in Medallion Architecture, real-time ingestion pipelines, and cost-optimised
+            cloud infrastructure — currently processing over <strong>30GB of data daily</strong>
+            across retail and banking domains.
+          </p>
+          <p class="about-bio mt-3">
+            Previously at <strong>Tata Consultancy Services</strong>, I led cloud data migrations,
+            BigQuery optimisation, and Infrastructure-as-Code using Terraform. I'm a
+            <strong>Google Certified Professional Data Engineer</strong> and a strong advocate for
+            clean, maintainable pipelines and engineering best practices.
+          </p>
+		  
+		  <p class="about-bio mt-3">
+			Beyond my day job, I actively <strong>mentor aspiring data engineers</strong>
+			on <a href="https://topmate.io/gourav_chawla" target="_blank"
+			rel="noopener noreferrer" class="about-link">Topmate</a> —
+			covering GCP, BigQuery, career guidance, and breaking into data engineering.
+		  </p>
+
+          <!-- Key stats -->
+          <div class="stats-row row g-3 mt-2">
+            <!-- Stat 1 -->
+            <div class="col-6 col-md-3">
+              <div class="stat-card">
+                <span class="stat-number">4<span class="accent">+</span></span>
+                <span class="stat-label">Years Exp.</span>
+              </div>
+            </div>
+            <!-- Stat 2 -->
+            <div class="col-6 col-md-3">
+              <div class="stat-card">
+                <span class="stat-number">30<span class="accent">GB</span></span>
+                <span class="stat-label">Daily Data</span>
+              </div>
+            </div>
+            <!-- Stat 3 -->
+            <div class="col-6 col-md-3">
+              <div class="stat-card">
+                <span class="stat-number">6<span class="accent">+</span></span>
+                <span class="stat-label">Sources</span>
+              </div>
+            </div>
+            <!-- Stat 4 -->
+            <div class="col-6 col-md-3">
+              <div class="stat-card">
+                <span class="stat-number">2<span class="accent">x</span></span>
+                <span class="stat-label">Companies</span>
+              </div>
+            </div>
+          </div>
+		  
+		  
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END ABOUT -->
+
+
+  <!-- ============================================================
+       SKILLS SECTION
+       To add a skill: copy one .skill-item div and update icon + text
+       Icons from: https://devicons.github.io/devicon/
+       Use <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/..." />
+  ============================================================ -->
+  <section id="skills" class="section-padding section-dark" aria-label="Technical skills">
+    <div class="container">
+
+      <div class="section-header text-center mb-5">
+        <p class="section-tag">// skills.json</p>
+        <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Cloud & GCP -->
+        <div class="col-lg-6">
+          <div class="skill-group glass-card">
+            <h3 class="skill-group-title">
+              <i class="fa-brands fa-google me-2 accent"></i>Cloud & GCP
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag primary">Google Cloud Platform</span>
+              <span class="skill-tag primary">BigQuery</span>
+              <span class="skill-tag primary">Dataproc</span>
+              <span class="skill-tag primary">Cloud Composer</span>
+              <span class="skill-tag">Microsoft Azure</span>
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Cloud Storage</span>
+              <span class="skill-tag">Cloud Functions</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Big Data & Pipeline -->
+        <div class="col-lg-6">
+          <div class="skill-group glass-card">
+            <h3 class="skill-group-title">
+              <i class="fa-solid fa-database me-2 accent"></i>Big Data & Pipelines
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag primary">Apache Spark</span>
+              <span class="skill-tag primary">PySpark</span>
+              <span class="skill-tag primary">Apache Airflow</span>
+              <span class="skill-tag primary">dbt</span>
+              <span class="skill-tag">Medallion Architecture</span>
+              <span class="skill-tag">ETL / ELT</span>
+              <span class="skill-tag">Hive</span>
+              <span class="skill-tag">Sqoop</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="col-lg-6">
+          <div class="skill-group glass-card">
+            <h3 class="skill-group-title">
+              <i class="fa-solid fa-code me-2 accent"></i>Languages
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag primary">Python</span>
+              <span class="skill-tag primary">Advanced SQL</span>
+              <span class="skill-tag">Shell Scripting</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">C++</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DevOps & Tools -->
+        <div class="col-lg-6">
+          <div class="skill-group glass-card">
+            <h3 class="skill-group-title">
+              <i class="fa-solid fa-wrench me-2 accent"></i>DevOps & Tools
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag primary">Terraform</span>
+              <span class="skill-tag primary">Docker</span>
+              <span class="skill-tag primary">GitHub / Git</span>
+              <span class="skill-tag primary">CI/CD</span>
+              <span class="skill-tag">Jenkins</span>
+              <span class="skill-tag">RESTful APIs</span>
+              <span class="skill-tag">Data Modeling</span>
+              <span class="skill-tag">MySQL</span>
+            </div>
+          </div>
+        </div>
+		
+		<!-- AI & Productivity Tools — NEW GROUP -->
+		<div class="col-lg-12">
+		<div class="skill-group glass-card">
+			<h3 class="skill-group-title">
+			<i class="fa-solid fa-brain me-2 accent"></i>
+			AI Tools & Productivity
+			<span class="skill-tag primary ms-2" style="font-size:0.7rem;vertical-align:middle;">2026 Focus</span>
+			</h3>
+			<div class="skill-tags">
+			<span class="skill-tag primary">Claude (Anthropic)</span>
+			<span class="skill-tag primary">GitHub Copilot</span>
+			<span class="skill-tag primary">Antigravity</span>
+			<span class="skill-tag">Prompt Engineering</span>
+			<span class="skill-tag">AI-Assisted Code Review</span>
+			<span class="skill-tag">LLM-Powered Documentation</span>
+			<span class="skill-tag">TDD Generation</span>
+			<span class="skill-tag">KT Automation</span>
+			</div>
+		</div>
+		</div>
+
+
+      </div>
+    </div>
+  </section>
+  <!-- END SKILLS -->
+
+
+  <!-- ============================================================
+       EXPERIENCE SECTION
+       To add a new job: copy one .timeline-item block below
+       and update company, role, dates, and bullet points.
+  ============================================================ -->
+  <section id="experience" class="section-padding" aria-label="Work experience">
+    <div class="container">
+
+      <div class="section-header text-center mb-5">
+        <p class="section-tag">// experience.log</p>
+        <h2 class="section-title">Work <span class="accent">Experience</span></h2>
+      </div>
+
+      <div class="timeline">
+
+        <!-- ── JOB 1: Accenture ── -->
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="d-flex flex-wrap justify-content-between align-items-start mb-2">
+              <div>
+                <h3 class="job-title">Data Engineer <span class="accent">(Analyst)</span></h3>
+                <p class="company-name">
+                  <i class="fa-solid fa-building me-1"></i>Accenture
+                </p>
+              </div>
+              <div class="text-end">
+                <span class="job-badge current">Current</span>
+                <p class="job-date">Mar 2025 – Present · Gurugram</p>
+              </div>
+            </div>
+            <ul class="job-bullets">
+              <li>Architected end-to-end Retail data products using <strong>Medallion Architecture</strong> (Bronze → Silver → Gold); implemented complex <strong>SCD Type 2</strong> and incremental logic via dbt + BigQuery, improving data reliability by <strong>30%</strong>.</li>
+              <li>Engineered a metadata-driven ingestion layer using <strong>Airflow DAGs + Dataproc</strong> processing <strong>30+ GB daily</strong> from 6+ sources — cutting manual ETL configuration effort by <strong>40%</strong>.</li>
+              <li>Designed a secure <strong>RESTful API framework</strong> for automated JSON extraction, achieving zero-downtime processing and accelerating vendor onboarding by <strong>25%</strong>.</li>
+              <li>Led team deployments via <strong>GitHub + Docker CI/CD</strong> pipelines, reducing production incidents by <strong>25%</strong> through automated quality gates.</li>
+			  <li>Mentored a cross-functional team of <strong>5–6 junior engineers</strong> across 2–3 teams; conducted KT sessions on <strong>Antigravity, Claude AI & GitHub Copilot</strong> — enabling the team to auto-generate TDDs, technical documentation, and boilerplate code, saving <strong>3–4 hrs/engineer/week</strong>.</li>
+			  <li>Certified <strong>Claude Architect (Anthropic)</strong> — leading internal AI adoption POCs; helping engineers integrate LLM tooling into daily workflows for documentation, code review, and sprint velocity improvement.</li>
+			 
+			  
+            </ul>
+            <!-- Tech used -->
+            <div class="job-tech mt-3">
+              <span class="tech-pill">BigQuery</span>
+              <span class="tech-pill">dbt</span>
+              <span class="tech-pill">Airflow</span>
+              <span class="tech-pill">Dataproc</span>
+              <span class="tech-pill">Docker</span>
+              <span class="tech-pill">GitHub CI/CD</span>
+              <span class="tech-pill">RESTful APIs</span>
+            </div>
+          </div>
+        </div>
+        <!-- ── END JOB 1 ── -->
+
+        <!-- ── JOB 2: TCS ── -->
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="d-flex flex-wrap justify-content-between align-items-start mb-2">
+              <div>
+                <h3 class="job-title">System Engineer</h3>
+                <p class="company-name">
+                  <i class="fa-solid fa-building me-1"></i>Tata Consultancy Services
+                </p>
+              </div>
+              <div class="text-end">
+                <span class="job-badge">Full-time</span>
+                <p class="job-date">Aug 2022 – Mar 2025 · Gurugram</p>
+              </div>
+            </div>
+            <ul class="job-bullets">
+              <li>Optimised large-scale database performance in the <strong>Banking domain</strong> — complex SQL queries and index maintenance reduced system downtime by <strong>15%</strong>.</li>
+              <li>Led high-integrity data migration using <strong>GCP, PySpark, and SparkSQL</strong>, improving system performance by <strong>20%</strong> and ensuring seamless financial data consistency.</li>
+              <li>Fine-tuned <strong>BigQuery execution plans</strong>, achieving a <strong>20% reduction in cloud compute costs</strong> and accelerating report generation by <strong>25%</strong>.</li>
+              <li>Utilised <strong>Terraform</strong> to provision data warehousing environments — datasets, storage buckets, and virtual machines — for repeatable, scalable infrastructure.</li>
+            </ul>
+            <div class="job-tech mt-3">
+              <span class="tech-pill">GCP</span>
+              <span class="tech-pill">PySpark</span>
+              <span class="tech-pill">SparkSQL</span>
+              <span class="tech-pill">BigQuery</span>
+              <span class="tech-pill">Terraform</span>
+              <span class="tech-pill">SQL</span>
+            </div>
+          </div>
+        </div>
+        <!-- ── END JOB 2 ── -->
+
+        <!--
+          ── TO ADD A NEW JOB ──
+          Copy and paste this block above:
+
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass-card">
+              <div class="d-flex flex-wrap justify-content-between align-items-start mb-2">
+                <div>
+                  <h3 class="job-title"> ROLE</h3>
+                  <p class="company-name"><i class="fa-solid fa-building me-1"></i>COMPANY NAME</p>
+                </div>
+                <div class="text-end">
+                  <span class="job-badge">Full-time</span>
+                  <p class="job-date">Mon YYYY – Mon YYYY · City</p>
+                </div>
+              </div>
+              <ul class="job-bullets">
+                <li>Achievement 1</li>
+                <li>Achievement 2</li>
+              </ul>
+              <div class="job-tech mt-3">
+                <span class="tech-pill">Skill 1</span>
+              </div>
+            </div>
+          </div>
+        -->
+
+      </div>
+    </div>
+  </section>
+  <!-- END EXPERIENCE -->
+
+
+  <!-- ============================================================
+       PROJECTS SECTION
+       To add a project: copy one .project-card column and update.
+       Add a screenshot to assets/ and update the img src.
+  ============================================================ -->
+  <section id="projects" class="section-padding section-dark" aria-label="Projects">
+    <div class="container">
+
+      <div class="section-header text-center mb-5">
+        <p class="section-tag">// projects.py --list</p>
+        <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+
+        <!-- ── PROJECT 1: Flipkart Insight Engine ── -->
+        <div class="col-lg-6">
+          <div class="project-card glass-card h-100">
+            <!-- Project header -->
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+              </div>
+              <div class="project-links">
+               
+                <a href="https://github.com/gouravchawla334" target="_blank" rel="noopener noreferrer"
+                  class="project-link-btn" aria-label="GitHub Repository">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <!-- LIVE DEMO: Replace # with live link, or remove if no demo -->
+                <!-- <a href="#" class="project-link-btn" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a> -->
+              </div>
+            </div>
+            <!-- Project details -->
+            <h3 class="project-title">Flipkart Insight Engine</h3>
+            <p class="project-date"><i class="fa-regular fa-calendar me-1"></i>May 2024</p>
+            <p class="project-desc">
+              Comprehensive e-commerce analysis platform using PySpark on Databricks — processing
+              large-scale product data with weighted ratings, sentiment analysis on customer reviews
+              using NLP, and time-series correlation for market trend identification.
+            </p>
+            <ul class="project-highlights">
+              <li>Weighted ratings + effective pricing logic at scale</li>
+              <li>NLP-powered sentiment analysis on customer reviews</li>
+              <li>Time-series & correlation analysis for market trends</li>
+            </ul>
+            <div class="project-tech mt-auto pt-3">
+              <span class="tech-pill">PySpark</span>
+              <span class="tech-pill">Databricks</span>
+              <span class="tech-pill">NLP</span>
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Apache Spark</span>
+            </div>
+          </div>
+        </div>
+        <!-- ── END PROJECT 1 ── -->
+
+        <!-- ── PROJECT 2 PLACEHOLDER ── -->
+        <!--
+          Add  next project here.
+          Copy the block above, update all content.
+          Add a screenshot: <img src="assets/project2-screenshot.png" ... />
+        -->
+        <div class="col-lg-6">
+          <div class="project-card glass-card h-100 project-placeholder">
+            <div class="project-header">
+              <div class="project-icon muted">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+            <h3 class="project-title muted">More Projects Coming</h3>
+            <p class="project-desc muted">
+              Working on a GCP data pipeline showcase and a Medallion Architecture demo.
+              Check back soon — or visit my GitHub for latest work.
+            </p>
+            <a href="https://github.com/gouravchawla334" target="_blank" rel="noopener noreferrer"
+              class="btn btn-outline-accent mt-3" aria-label="View GitHub">
+              <i class="fa-brands fa-github me-2"></i>View GitHub
+            </a>
+          </div>
+        </div>
+        <!-- ── END PROJECT 2 PLACEHOLDER ── -->
+
+      </div>
+    </div>
+  </section>
+  <!-- END PROJECTS -->
+
+
+  <!-- ============================================================
+       CERTIFICATIONS SECTION
+       To add: copy one .cert-card div and update icon, title, issuer, date
+  ============================================================ -->
+  <section id="certifications" class="section-padding" aria-label="Certifications">
+    <div class="container">
+
+      <div class="section-header text-center mb-5">
+        <p class="section-tag">// certifications.verified</p>
+        <h2 class="section-title">Certifi<span class="accent">cations</span></h2>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Google Professional Data Engineer -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cert-card glass-card text-center">
+            <div class="cert-icon google">
+              <i class="fa-brands fa-google"></i>
+            </div>
+            <h4 class="cert-title">Professional Data Engineer</h4>
+            <p class="cert-issuer">Google Cloud</p>
+            
+            <a href="https://www.credly.com/badges/aeea268a-841a-43f3-958d-17443e2dde2f" target="_blank" rel="noopener noreferrer" class="cert-verify" aria-label="Verify certificate">
+              <i class="fa-solid fa-badge-check me-1"></i>Verified
+            </a>
+          </div>
+        </div>
+		
+		<!-- Claude Certified Architect -->
+		<div class="col-md-6 col-lg-4">
+		<div class="cert-card glass-card text-center">
+			<div class="cert-icon" style="background:rgba(205,127,50,0.12);color:#cd7f32;border:1px solid rgba(205,127,50,0.3);">
+			<i class="fa-solid fa-brain"></i>
+			</div>
+			<h4 class="cert-title">Certified Architect – Foundations</h4>
+			<p class="cert-issuer">Anthropic (Claude AI)</p>
+			
+			<span class="cert-verify" style="cursor:default;">
+			<i class="fa-solid fa-badge-check me-1"></i>Verified
+			</span>
+		</div>
+		</div>
+
+        <!-- Azure AZ-900 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cert-card glass-card text-center">
+            <div class="cert-icon azure">
+              <i class="fa-brands fa-microsoft"></i>
+            </div>
+            <h4 class="cert-title">Azure Fundamentals</h4>
+            <p class="cert-issuer">Microsoft Azure AZ-900</p>
+            <a href="https://www.credly.com/badges/47c79098-fc6b-4650-a754-dd5138224376" target="_blank" rel="noopener noreferrer" class="cert-verify" aria-label="Verify certificate">
+              <i class="fa-solid fa-badge-check me-1"></i>Verified
+            </a>
+          </div>
+        </div>
+
+        <!-- Associate Data Practitioner -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cert-card glass-card text-center">
+            <div class="cert-icon data">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <h4 class="cert-title">Associate Data Practitioner</h4>
+            <p class="cert-issuer">Certification Body</p>
+            <a href="https://www.credly.com/badges/4aa484a2-efd3-415e-bce6-031bfb7001bf" target="_blank" rel="noopener noreferrer" class="cert-verify" aria-label="Verify certificate">
+              <i class="fa-solid fa-badge-check me-1"></i>Verified
+            </a>
+          </div>
+        </div>
+
+		<!-- Python IBM -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cert-card glass-card text-center">
+            <div class="cert-icon python">
+              <i class="fa-brands fa-python"></i>
+            </div>
+            <h4 class="cert-title">Python for Data Science</h4>
+            <p class="cert-issuer">IBM</p>
+            <a href="https://www.credly.com/badges/03c024a7-936f-454d-9962-a582e70e7419" target="_blank"
+              rel="noopener noreferrer" class="cert-verify" aria-label="Verify certificate">
+              <i class="fa-solid fa-badge-check me-1"></i>Verified
+            </a>
+          </div>
+        </div>
+       
+
+        <!-- Spark IBM -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cert-card glass-card text-center">
+            <div class="cert-icon ibm">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h4 class="cert-title">Spark Foundations Level 1</h4>
+            <p class="cert-issuer">IBM</p>
+            <a href="https://www.credly.com/badges/f4c61e2e-08a8-428d-9d58-a4caa30ba7f3" target="_blank" rel="noopener noreferrer" class="cert-verify" aria-label="Verify certificate">
+              <i class="fa-solid fa-badge-check me-1"></i>Verified
+            </a>
+          </div>
+        </div>
+		
+		 <!-- Hadoop IBM -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cert-card glass-card text-center">
+            <div class="cert-icon ibm">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <h4 class="cert-title">Hadoop Foundation Level 1</h4>
+            <p class="cert-issuer">IBM</p>
+            <a href="https://www.credly.com/badges/574b8817-496f-4fb8-b3c0-b063d39018ef" target="_blank" rel="noopener noreferrer" class="cert-verify" aria-label="Verify certificate">
+              <i class="fa-solid fa-badge-check me-1"></i>Verified
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END CERTIFICATIONS -->
+
+
+  <!-- ============================================================
+       AWARDS SECTION
+  ============================================================ -->
+  <section id="awards" class="section-padding section-dark" aria-label="Awards and recognition">
+    <div class="container">
+
+      <div class="section-header text-center mb-5">
+        <p class="section-tag">// awards.txt</p>
+        <h2 class="section-title">Awards & <span class="accent">Recognition</span></h2>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6">
+          <div class="award-card glass-card">
+            <div class="award-icon"><i class="fa-solid fa-trophy"></i></div>
+            <div class="award-content">
+              <h4 class="award-title">Costco RMN/Q2 Trailblazers Award</h4>
+              <p class="award-company">Accenture</p>
+              <p class="award-desc">Recognised for consistent delivery and impactful contributions to high-priority workstreams.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="award-card glass-card">
+            <div class="award-icon"><i class="fa-solid fa-medal"></i></div>
+            <div class="award-content">
+              <h4 class="award-title">Leadership Appreciation – FY25 Delivery</h4>
+              <p class="award-company">Accenture</p>
+              <p class="award-desc">Awarded for impactful collaboration and quality in delivering key production milestones.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="award-card glass-card">
+            <div class="award-icon"><i class="fa-solid fa-star"></i></div>
+            <div class="award-content">
+              <h4 class="award-title">Client & Leadership Appreciation</h4>
+              <p class="award-company">Accenture</p>
+              <p class="award-desc">Recognised for proactive problem-solving and innovative handling of infrastructure issues during critical deployment.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="award-card glass-card">
+            <div class="award-icon"><i class="fa-solid fa-crown"></i></div>
+            <div class="award-content">
+              <h4 class="award-title">Star Performer of the Month</h4>
+              <p class="award-company">Tata Consultancy Services</p>
+              <p class="award-desc">Recognised for exceptional quality of work and maintaining high system reliability within the banking domain.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END AWARDS -->
+
+
+  <!-- ============================================================
+       CONTACT SECTION
+       This form uses mailto: — it opens the user's email client
+       with all fields pre-filled. No backend/server needed.
+       The mailto logic is in js/main.js → initContactForm()
+  ============================================================ -->
+  <section id="contact" class="section-padding" aria-label="Contact me">
+    <div class="container">
+
+      <div class="section-header text-center mb-5">
+        <p class="section-tag">// contact.send()</p>
+        <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+        <p class="section-subtitle">Have a project, opportunity, or just want to say hello?<br />Drop me a message and I'll get back to you.</p>
+      </div>
+
+      <div class="row g-5 justify-content-center">
+
+        <!-- Contact info column -->
+        <div class="col-lg-4">
+          <div class="contact-info">
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <p class="contact-label">Email</p>
+                <a href="mailto:gouravchawla334@gmail.com" class="contact-value">gouravchawla334@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div>
+                <p class="contact-label">LinkedIn</p>
+                <a href="https://linkedin.com/in/gourav-chawla" target="_blank" rel="noopener noreferrer"
+                  class="contact-value">linkedin.com/in/gourav-chawla</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+              <div>
+                <p class="contact-label">GitHub</p>
+                <a href="https://github.com/gouravchawla334" target="_blank" rel="noopener noreferrer"
+                  class="contact-value">github.com/gouravchawla334</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <p class="contact-label">Location</p>
+                <p class="contact-value">Gurugram, Haryana, India</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Contact form column -->
+        <div class="col-lg-7">
+          <div class="contact-form-wrapper glass-card">
+            <!--
+              FORM: All fields are captured by JS and passed to mailto:.
+              The JS is in js/main.js → initContactForm()
+              This opens the visitor's email client with the message pre-filled.
+            -->
+            <div id="contact-form" novalidate>
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="contact-name" class="form-label">Your Name <span class="accent">*</span></label>
+                    <input type="text" id="contact-name" class="form-control custom-input"
+                      placeholder="John Doe" required autocomplete="name" />
+                    <div class="invalid-feedback" id="name-error">Please enter your name.</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="contact-email" class="form-label">Email Address <span class="accent">*</span></label>
+                    <input type="email" id="contact-email" class="form-control custom-input"
+                      placeholder="john@example.com" required autocomplete="email" />
+                    <div class="invalid-feedback" id="email-error">Please enter a valid email.</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="contact-subject" class="form-label">Subject <span class="accent">*</span></label>
+                    <input type="text" id="contact-subject" class="form-control custom-input"
+                      placeholder="Project collaboration / Job opportunity / General query" required />
+                    <div class="invalid-feedback" id="subject-error">Please enter a subject.</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="contact-message" class="form-label">Message <span class="accent">*</span></label>
+                    <textarea id="contact-message" class="form-control custom-input" rows="5"
+                      placeholder="Hi Gourav, I'd like to discuss..." required></textarea>
+                    <div class="invalid-feedback" id="message-error">Please enter your message.</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="button" id="contact-submit" class="btn btn-accent w-100">
+                    <i class="fa-solid fa-paper-plane me-2"></i>
+                    <span id="submit-text">Send Message</span>
+                  </button>
+                  <!-- Success / error messages shown by JS -->
+                  <div id="form-success" class="form-message success mt-3" style="display:none;">
+                    <i class="fa-solid fa-circle-check me-2"></i>
+                    Your email client will open with the message pre-filled. Click Send!
+                  </div>
+                  <div id="form-error" class="form-message error mt-3" style="display:none;">
+                    <i class="fa-solid fa-circle-xmark me-2"></i>
+                    Please fill in all required fields correctly.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END CONTACT -->
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <!-- Linktree -->
+			<p class="footer-copy mt-1" style="font-size:0.78rem;">
+			<a href="https://linktr.ee/gourav_chawla" target="_blank" rel="noopener noreferrer"
+				style="color:var(--accent);text-decoration:none;">
+				<i class="fa-solid fa-link me-1"></i>All Links → linktr.ee/gouravchawla
+			</a>
+			</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <div class="footer-socials" aria-label="Social links">
+            <a href="https://linkedin.com/in/gourav-chawla" target="_blank" rel="noopener noreferrer"
+              class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/gouravchawla334" target="_blank" rel="noopener noreferrer"
+              class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://dev.to/gouravchawla28" target="_blank" rel="noopener noreferrer"
+              class="social-icon" aria-label="Dev.to"><i class="fa-brands fa-dev"></i></a>
+            <a href="mailto:gouravchawla334@gmail.com" class="social-icon" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+
+
+  <!-- ============================================================
+       EXTERNAL JS — Bootstrap + Particles.js + Typed.js
+  ============================================================ -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

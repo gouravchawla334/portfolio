@@ -1,0 +1,1353 @@
+/* ================================================================
+   PORTFOLIO — style.css
+   Author: Gourav Chawla
+   Description: All custom styles. Bootstrap handles the grid/utilities.
+   Structure:
+     1. CSS Variables (theme tokens)
+     2. Global / Reset
+     3. Navbar
+     4. Hero
+     5. Section Shared
+     6. About
+     7. Skills
+     8. Experience (Timeline)
+     9. Projects
+    10. Certifications
+    11. Awards
+    12. Contact
+    13. Footer
+    14. Scroll-to-top button
+    15. Animations & Keyframes
+    16. Responsive overrides
+================================================================ */
+
+
+/* ================================================================
+   1. CSS VARIABLES — THEME TOKENS
+================================================================ */
+:root {
+  /* Core palette */
+  --bg-dark:         #080d1a;       /* Page background */
+  --bg-section:      #0d1426;       /* Alternate section bg */
+  --bg-card:         rgba(13, 25, 52, 0.7);  /* Glass card bg */
+  --bg-card-hover:   rgba(13, 25, 52, 0.95);
+
+  /* Accent — electric teal/cyan  */
+  --accent:          #00d4ff;
+  --accent-dark:     #00a8cc;
+  --accent-glow:     rgba(0, 212, 255, 0.25);
+
+  /* Text */
+  --text-primary:    #e8eaf6;
+  --text-secondary:  #8892b0;
+  --text-muted:      #4a5568;
+
+  /* Border */
+  --border:          rgba(0, 212, 255, 0.12);
+  --border-hover:    rgba(0, 212, 255, 0.4);
+
+  /* Typography */
+  --font-heading:    'JetBrains Mono', monospace;
+  --font-body:       'Nunito', sans-serif;
+
+  /* Spacing */
+  --section-py:      100px;
+
+  /* Transitions */
+  --transition:      all 0.3s ease;
+}
+
+
+/* ================================================================
+   2. GLOBAL / RESET
+================================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;  /* Offset for fixed navbar */
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Selection colour */
+::selection {
+  background: var(--accent);
+  color: var(--bg-dark);
+}
+
+/* Accent colour utility */
+.accent {
+  color: var(--accent);
+}
+
+/* Scrollbar styling (Webkit) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-dark);
+  border-radius: 3px;
+}
+
+/* Glass card — shared component */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: var(--transition);
+}
+.glass-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 0 30px var(--accent-glow);
+  transform: translateY(-3px);
+}
+
+/* Accent button */
+.btn-accent {
+  background: var(--accent);
+  color: var(--bg-dark);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+}
+.btn-accent:hover {
+  background: transparent;
+  color: var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Outline accent button */
+.btn-outline-accent {
+  background: transparent;
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+}
+.btn-outline-accent:hover {
+  background: var(--accent);
+  color: var(--bg-dark);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Tech pills — small tags for stack labels */
+.tech-pill {
+  display: inline-block;
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  margin: 3px 2px;
+}
+
+
+/* ================================================================
+   3. NAVBAR
+================================================================ */
+#mainNav {
+  background: rgba(8, 13, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  transition: var(--transition);
+  z-index: 1000;
+}
+
+/* Solid background when scrolled — toggled by JS */
+#mainNav.scrolled {
+  background: rgba(8, 13, 26, 0.98);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+}
+
+/* Logo / Brand */
+.navbar-brand {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--text-primary) !important;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.brand-bracket {
+  color: var(--accent);
+}
+
+/* Nav links */
+.nav-link {
+  color: var(--text-secondary) !important;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 6px 14px !important;
+  transition: var(--transition);
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent) !important;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* Custom hamburger icon */
+.navbar-toggler {
+  background: none;
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.toggler-icon {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--accent);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+
+/* ================================================================
+   4. HERO
+================================================================ */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--bg-dark);
+  display: flex;
+  align-items: center;
+}
+
+/* Particles canvas — fills hero section */
+#particles-js {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Hero content sits above particles */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+}
+
+/* Greeting tag */
+.hero-greeting {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 0.2s forwards;
+}
+.code-tag {
+  color: var(--text-secondary);
+}
+
+/* Name */
+.hero-name {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 0.4s forwards;
+}
+
+/* Typed.js role line */
+.hero-role {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 0.6s forwards;
+}
+/* Typed cursor inherits accent colour */
+.typed-cursor {
+  color: var(--accent);
+  font-weight: 300;
+}
+
+/* Tagline */
+.hero-tagline {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 0.8s forwards;
+}
+
+/* CTA buttons row */
+.hero-cta {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 1s forwards;
+}
+
+/* Social icons row */
+.hero-socials {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 1.2s forwards;
+}
+
+/* Social icon button */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-right: 10px;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.social-icon:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 16px var(--accent-glow);
+  transform: translateY(-3px);
+}
+
+/* Pipeline SVG illustration */
+.hero-illustration {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+  animation: fadeIn 1s ease 1.4s forwards;
+  transition: transform 0.15s ease-out; 
+}
+.pipeline-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Pulse animation on SVG center node */
+.pulse-node {
+  animation: svgPulse 2.5s ease-in-out infinite;
+}
+.orbit-node {
+  animation: svgPulse 2.5s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+/* Scroll indicator — three stacked dots */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.scroll-indicator span {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0;
+  animation: scrollDots 1.5s ease infinite;
+}
+.scroll-indicator span:nth-child(1) { animation-delay: 0s; }
+.scroll-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.scroll-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+
+/* ================================================================
+   5. SECTION SHARED
+================================================================ */
+.section-padding {
+  padding: var(--section-py) 0;
+}
+
+/* Alternate dark section */
+.section-dark {
+  background: var(--bg-section);
+}
+
+/* Section tag — small label above title */
+.section-tag {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+/* Section title */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+/* Section subtitle */
+.section-subtitle {
+  color: var(--text-secondary);
+  margin-top: 12px;
+  font-size: 1rem;
+}
+
+
+/* ================================================================
+   6. ABOUT
+================================================================ */
+
+/* Profile photo wrapper */
+.profile-photo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Actual photo  */
+.profile-photo {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 3px solid var(--accent);
+  position: relative;
+  z-index: 1;
+  filter: grayscale(20%);
+  transition: var(--transition);
+}
+.profile-photo:hover {
+  filter: grayscale(0%);
+}
+
+/* Placeholder — shown when no photo is provided */
+.profile-photo-placeholder {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 2px dashed var(--accent);
+  background: rgba(0, 212, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+}
+.placeholder-initials {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+.placeholder-note {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* Decorative ring around photo */
+.photo-ring {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 284px;
+  height: 284px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  animation: spin 20s linear infinite;
+  z-index: 0;
+}
+
+/* Bio text */
+.about-bio {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.about-bio strong {
+  color: var(--text-primary);
+}
+
+/* Stats cards */
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 12px;
+  text-align: center;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stat-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: block;
+}
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+
+/* ================================================================
+   7. SKILLS
+================================================================ */
+.skill-group {
+  height: 100%;
+}
+
+.skill-group-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Tag cloud */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  font-family: var(--font-heading);
+  transition: var(--transition);
+  cursor: default;
+}
+.skill-tag:hover {
+  background: rgba(0, 212, 255, 0.08);
+  color: var(--accent);
+  border-color: rgba(0, 212, 255, 0.4);
+}
+
+/* Primary / highlight skill tags */
+.skill-tag.primary {
+  background: rgba(0, 212, 255, 0.08);
+  color: var(--accent);
+  border-color: rgba(0, 212, 255, 0.3);
+}
+.skill-tag.primary:hover {
+  background: rgba(0, 212, 255, 0.18);
+}
+
+
+/* ================================================================
+   8. EXPERIENCE — TIMELINE
+================================================================ */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.timeline-item.slide-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Timeline dot */
+.timeline-dot {
+  position: absolute;
+  left: -26px;
+  top: 22px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg-dark);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+/* Job card inherits .glass-card */
+.timeline-card {
+  /* Additional overrides for job cards */
+}
+
+.job-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.company-name {
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-family: var(--font-heading);
+  margin-bottom: 0;
+}
+
+.job-date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+/* Current / Full-time badge */
+.job-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  letter-spacing: 0.5px;
+}
+.job-badge.current {
+  background: rgba(0, 212, 255, 0.12);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Bullet list */
+.job-bullets {
+  padding-left: 18px;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+.job-bullets li {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.job-bullets li strong {
+  color: var(--text-primary);
+}
+
+/* Tech pills row inside job card */
+.job-tech {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+
+/* ================================================================
+   9. PROJECTS
+================================================================ */
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.project-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+.project-icon.muted {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+.project-links {
+  display: flex;
+  gap: 8px;
+}
+
+.project-link-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.project-link-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.project-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.project-title.muted {
+  color: var(--text-muted);
+}
+
+.project-date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  margin-bottom: 12px;
+}
+
+.project-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex-grow: 1;
+}
+.project-desc.muted {
+  color: var(--text-muted);
+}
+
+.project-highlights {
+  padding-left: 16px;
+  margin-top: 10px;
+}
+.project-highlights li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+}
+
+.project-tech {
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-placeholder {
+  border-style: dashed;
+  justify-content: center;
+  text-align: center;
+}
+
+
+/* ================================================================
+   10. CERTIFICATIONS
+================================================================ */
+.cert-card {
+  padding: 32px 20px;
+}
+
+.cert-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin: 0 auto 16px;
+}
+/* Icon colour variants */
+.cert-icon.google  { background: rgba(66, 133, 244, 0.15); color: #4285f4; border: 1px solid rgba(66,133,244,0.3); }
+.cert-icon.azure   { background: rgba(0, 120, 212, 0.15);  color: #0078d4; border: 1px solid rgba(0,120,212,0.3); }
+.cert-icon.ibm     { background: rgba(54, 116, 225, 0.15); color: #3674e1; border: 1px solid rgba(54,116,225,0.3); }
+.cert-icon.data    { background: rgba(0, 212, 255, 0.12);  color: var(--accent); border: 1px solid rgba(0,212,255,0.3); }
+.cert-icon.python  { background: rgba(255, 214, 0, 0.1);   color: #ffd600; border: 1px solid rgba(255,214,0,0.3); }
+
+.cert-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.cert-issuer {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  margin-bottom: 14px;
+}
+
+.cert-verify {
+  font-size: 0.78rem;
+  font-family: var(--font-heading);
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  padding: 4px 12px;
+  border-radius: 20px;
+  transition: var(--transition);
+  display: inline-block;
+}
+.cert-verify:hover {
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--accent);
+}
+
+
+/* ================================================================
+   11. AWARDS
+================================================================ */
+.award-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.award-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.award-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.award-company {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-family: var(--font-heading);
+  margin-bottom: 6px;
+}
+
+.award-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+
+/* ================================================================
+   12. CONTACT
+================================================================ */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 8px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+}
+
+.contact-value {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition);
+  display: block;
+}
+.contact-value:hover {
+  color: var(--accent);
+}
+
+/* Form */
+.contact-form-wrapper {
+  padding: 36px;
+}
+
+.form-label {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+
+/* Custom input / textarea */
+.custom-input {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 10px !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.95rem;
+  padding: 12px 16px !important;
+  transition: var(--transition) !important;
+}
+.custom-input::placeholder {
+  color: var(--text-muted) !important;
+}
+.custom-input:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-glow) !important;
+  background: rgba(0, 212, 255, 0.03) !important;
+  outline: none !important;
+}
+.custom-input.is-invalid {
+  border-color: #ff6b6b !important;
+}
+
+/* Validation messages */
+.invalid-feedback {
+  font-size: 0.78rem;
+  color: #ff6b6b;
+  margin-top: 4px;
+  display: none;
+}
+.custom-input.is-invalid ~ .invalid-feedback {
+  display: block;
+}
+
+/* Form status messages */
+.form-message {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-family: var(--font-heading);
+}
+.form-message.success {
+  background: rgba(0, 212, 100, 0.1);
+  border: 1px solid rgba(0, 212, 100, 0.3);
+  color: #00d464;
+}
+.form-message.error {
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  color: #ff6b6b;
+}
+
+/* Inline text link — used in About bio for Topmate */
+.about-link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.4);
+  transition: var(--transition);
+}
+.about-link:hover {
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ================================================================
+   13. FOOTER
+================================================================ */
+.site-footer {
+  background: var(--bg-section);
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+
+/* ================================================================
+   14. SCROLL-TO-TOP BUTTON
+   Shown by JS when user scrolls past 400px
+================================================================ */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg-dark);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px var(--accent-glow);
+  transition: var(--transition);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+#scrollTopBtn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+#scrollTopBtn:hover {
+  transform: translateY(-4px);
+  background: var(--accent-dark);
+}
+
+
+/* ================================================================
+   15. ANIMATIONS & KEYFRAMES
+================================================================ */
+
+/* Fade in from below */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Simple fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Scroll dots animation */
+@keyframes scrollDots {
+  0%, 100% { opacity: 0; transform: translateY(0); }
+  50%       { opacity: 1; transform: translateY(4px); }
+}
+
+/* SVG pulse */
+@keyframes svgPulse {
+  0%, 100% { opacity: 0.6; r: 30; }
+  50%       { opacity: 1;   r: 33; }
+}
+
+/* Photo ring spin */
+@keyframes spin {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to   { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* Scroll-triggered fade-in — applied by JS on .reveal elements */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ================================================================
+   16. RESPONSIVE OVERRIDES
+================================================================ */
+
+/* Tablet — md breakpoint (768px) */
+@media (max-width: 991px) {
+  :root {
+    --section-py: 70px;
+  }
+
+  .timeline {
+    padding-left: 20px;
+  }
+  .timeline-dot {
+    left: -18px;
+  }
+
+  .contact-form-wrapper {
+    padding: 24px;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  #scrollTopBtn {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* Mobile — sm breakpoint (576px) */
+@media (max-width: 576px) {
+  :root {
+    --section-py: 60px;
+  }
+
+  .hero-name {
+    font-size: 2.2rem;
+  }
+
+  .glass-card {
+    padding: 20px;
+  }
+
+  .award-card {
+    flex-direction: column;
+  }
+
+  .profile-photo,
+  .profile-photo-placeholder {
+    width: 200px;
+    height: 200px;
+  }
+  .photo-ring {
+    width: 224px;
+    height: 224px;
+  }
+}
+
+/* ================================================================
+   DARK / LIGHT THEME TOGGLE
+   Light theme overrides CSS variables 
+================================================================ */
+
+/* Light theme variable overrides */
+body.light-theme {
+  --bg-dark:       #f0f4f8;
+  --bg-section:    #e2e8f0;
+  --bg-card:       rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.98);
+  --text-primary:  #0f172a;
+  --text-secondary:#334155;
+  --text-muted:    #94a3b8;
+  --border:        rgba(0, 150, 180, 0.15);
+  --border-hover:  rgba(0, 150, 180, 0.45);
+  --accent-glow:   rgba(0, 150, 180, 0.2);
+}
+
+/* Navbar in light mode */
+body.light-theme #mainNav {
+  background: rgba(240, 244, 248, 0.9);
+  border-bottom: 1px solid rgba(0,150,180,0.15);
+}
+body.light-theme #mainNav.scrolled {
+  background: rgba(240, 244, 248, 0.98);
+}
+
+/* Particles canvas — subtle in light mode */
+body.light-theme #particles-js canvas {
+  opacity: 0.6;
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Theme toggle button */
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+.theme-toggle-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* Scrollbar in light mode */
+body.light-theme ::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: #00a8cc;
+}
+
+/* Custom Cursor */
+* { cursor: none; }  /* hide default cursor site-wide */
+
+#cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+  z-index: 99999;
+  opacity: 0.7;
+}
+#cursor-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  box-shadow: 0 0 8px var(--accent);
+}
+/* Hover state — ring grows and glows */
+#cursor-ring.cursor-hover {
+  width: 56px;
+  height: 56px;
+  border-color: var(--accent);
+  opacity: 1;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+/* Restore cursor inside inputs */
+input, textarea { cursor: text !important; }
+
+
+/* Skill tag stagger animation */
+.skill-tag {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, 
+              background 0.3s ease, color 0.3s ease; /* keep existing hover transitions */
+}
+.skill-tag.tag-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
