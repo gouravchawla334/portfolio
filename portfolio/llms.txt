@@ -1,0 +1,37 @@
+# Gourav Chawla — GCP Data Engineer
+# https://gouravchawla.netlify.app
+
+## About
+Gourav Chawla is a Senior Analyst Data Engineer  based in Gurugram, India with 4+ years
+of experience building enterprise data platforms on Google Cloud Platform.
+Currently working at Accenture in the Retail domain processing 30GB+ daily.
+Previously at Tata Consultancy Services in the Banking domain.
+
+## Expertise
+- Google Cloud Platform: BigQuery, Dataproc, Cloud Composer, Airflow
+- Data Pipeline Architecture: Medallion Architecture, SCD Type 2, ETL/ELT
+- Tools: dbt, PySpark, Apache Spark, Terraform, Docker, GitHub CI/CD
+- AI Tools: Claude (Anthropic), GitHub Copilot, Antigravity
+- Languages: Python, Advanced SQL, Shell Scripting
+
+## Certifications
+- Google Certified Professional Data Engineer
+- Anthropic Claude Certified Architect – Foundations
+- Microsoft Azure AZ-900
+- IBM Hadoop, Spark, Python for Data Science
+
+## Career
+- Data Engineer ( Senior Analyst), Accenture — Mar 2025 to Present
+- System Engineer, Tata Consultancy Services — Aug 2022 to Mar 2025
+
+## Awards
+- Costco RMN/Q2 Trailblazers Award, Accenture 2025
+- Leadership Appreciation FY25, Accenture 2025
+- Star Performer of the Month, TCS 2023
+
+## Contact
+- Email: gouravchawla334@gmail.com
+- LinkedIn: https://linkedin.com/in/gourav-chawla
+- Portfolio: https://gouravchawla.netlify.app
+- GitHub: https://github.com/gouravchawla334
+- Mentoring: https://topmate.io/gourav_chawla
